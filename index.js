@@ -55,9 +55,10 @@ app.use("/posts", postRoutes);
 
 
 /* MONGOOSE SETUP */
+const MONGO_URL = "mongodb+srv://user:user123@cluster0.stxnhiy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const PORT = process.env.PORT || 6001;
 mongoose
-  .connect(process.env.MONGO_URL)
+  .connect(MONGO_URL)
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
